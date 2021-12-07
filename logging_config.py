@@ -9,7 +9,7 @@ DEFAULT_LOG_CONFIG_DICT = {
         'default': {
             'format': ('%(asctime)s | %(process)d | %(levelname)s | +%(lineno)d %(name)s '
                        '|> %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
         }
     },
     'handlers': {
@@ -17,14 +17,14 @@ DEFAULT_LOG_CONFIG_DICT = {
             'class': 'logging.StreamHandler',
             'formatter': 'default',
             'stream': 'ext://sys.stdout'
-        },
+        }
     },
     'loggers': {
         '': {
             'handlers': ['plain'],
-            'level': 'INFO',
-        },
-    },
+            'level': 'INFO'
+        }
+    }
 }
 
 
