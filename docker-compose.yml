@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+
+  swish-scrape-build:
+    build:
+      context: .
+      target: prod
+    image: swish-scrape:${IMAGE_TAG:-latest}
+
+  swish-scrape-run:
+    image: swish-scrape:${IMAGE_TAG:-latest}
+    links:
+      - swish-redis
+    ports:
+      - 8888:8888
+    volumes:
+      - ./:/services/swish/swish-scrape/
+
+  swish-redis:
+    image: redis:alpine
+    expose:
+      - '6379'
